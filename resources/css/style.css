@@ -32,17 +32,17 @@ p {
 }
 
 @media only screen and (max-width: 1024px) {
-  .hidedInPortrait {
+  .hidedForPortrait {
     display: none;
   }
   
-  .inlineInPortrait {
+  .inlineForPortrait {
     display: inline;
   }
 }
 
 @media only screen and (max-width: 470px) {
-  .hidedInPhone {
+  .hidedForPhone {
     display: none;
   }
 }
@@ -58,27 +58,17 @@ p {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 @media only screen and (max-width: 1024px) {
   .container {
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-	  
+    width: 100%;	  
   }	
 }
 
 /*************************************************/
 /* The logo and the company title                */
 /*************************************************/
-
-.logo .container {
-  justify-content: left;	
-}
 
 .logo img {
   height: 1.5rem;
@@ -151,6 +141,10 @@ p.newsInfo {
   font-weight: bold;
 }
 
+.navigation .container {
+  justify-content: space-between;
+}
+
 @media only screen and (max-width: 1024px) {
   .navigation .container {
     justify-content: center;
@@ -164,6 +158,10 @@ p.newsInfo {
 .content {
   background-color: white;
   padding: 0 0 4rem 0;
+}
+
+.content .container {
+  justify-content: space-between;
 }
 
 @media only screen and (max-width: 470px) {
