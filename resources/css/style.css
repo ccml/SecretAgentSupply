@@ -12,9 +12,39 @@ html {
 /*************************************************/
 
 body {
+  color: white;
   background: black;
   margin: 0;
   padding: 0;
+}
+
+/*************************************************/
+/* Global settings                               */
+/*************************************************/
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.hidedForLargeScreen {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .hidedInPortrait {
+    display: none;
+  }
+  
+  .inlineInPortrait {
+    display: inline;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .hidedInPhone {
+    display: none;
+  }
 }
 
 /*************************************************/
@@ -28,11 +58,27 @@ body {
   margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+	  
+  }	
 }
 
 /*************************************************/
 /* The logo and the company title                */
 /*************************************************/
+
+.logo .container {
+  justify-content: left;	
+}
 
 .logo img {
   height: 1.5rem;
@@ -40,30 +86,184 @@ body {
 }
 
 span.siteTitle {
-  color: white;
   margin: 0.66rem 1rem;
-  display: inline;
 }
 
+/*************************************************/
+/* The main banner                               */
+/*************************************************/
+
 .mainBanner {
-	background-image: url("../images/moto.jpeg");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	height: 25rem;
+  background-image: url("../images/moto.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 25rem;
 }
 
 .mainBanner .news {
 	background: black;
-	color: white;
-	width: 20rem;;
+	width: 20rem;
 	padding: 2rem 3rem;;
 	top: 9rem;
 	position: relative;
 }
 
-.mainBanner .news p {
+p.newsTitle {
+  font-weight: bold;  
+  margin: 0 0 0.25rem 0;
+}
+
+p.newsInfo {
   font-size: 2rem;
   font-weight: bold;
+}
+
+@media only screen and (max-width: 470px) {
+  .mainBanner {
+    height: 15rem;
+  }
+  
+  .mainBanner .news {
+    width: 100%;
+    padding: 1rem 2rem;;
+	top: 10rem;
+  }
+  
+  p.newsTitle {
+    font-size: 0.77rem;
+    font-weight: bold;  
+  }
+
+  p.newsInfo {
+	font-size: 1rem;
+    font-weight: bold;
+  }
+}
+
+/*************************************************/
+/* The menu                                      */
+/*************************************************/
+
+.navigation {
+  background-color: firebrick;
+  padding: 0.75rem 0;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 1024px) {
+  .navigation .container {
+    justify-content: center;
+  }
+}
+
+/*************************************************/
+/* The page content                              */
+/*************************************************/
+
+.content {
+  background-color: white;
+  padding: 0 0 4rem 0;
+}
+
+@media only screen and (max-width: 470px) {
+  .content .container {
+    justify-content: center;
+	flex-direction: column;
+  }
+}
+
+/*-----------------------------------------------*/
+/* The product list                              */
+/*-----------------------------------------------*/
+
+.productGrid {
+  padding: 3rem 0;
+}
+
+.product {
+  border: 4px solid black;
+  width: 30%;
+}
+
+.productImage {
+  height: 9rem;
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.productImage img {
+  max-height: 9rem;
+  max-width: 9rem;
+}
+
+.productCaption {
+  background: black;	
+  padding: 0.5rem 0;
+}
+
+.productCaption p {
+  text-align: center;
+}
+
+@media only screen and (max-width: 1024px) {
+  .product {
+    width: 47%;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .product {
+    width: 90%;
+  }
+}
+
+/*-----------------------------------------------*/
+/* The locations and the open hours              */
+/*-----------------------------------------------*/
+
+.locationHours {
+  width: 35%;	
+}
+
+.locationsHoursTitle {
+  background-color: black;
   margin: 0;
+  padding: 1rem 2rem;
+}
+
+.locationsHoursTitle h2 {
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+  color: white;  
+}
+
+.locationHours p {
+  color: black;
+}
+
+@media only screen and (max-width: 470px) {
+  .locationHours {
+    width: 90%;
+	margin-bottom: 0.5rem;
+  }
+}
+
+/*************************************************/
+/* The footer                                    */
+/*************************************************/
+
+.footer {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 470px) {
+  .footer .container {
+    justify-content: center;
+  }
 }
